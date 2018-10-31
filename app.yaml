@@ -1,0 +1,40 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /css
+  static_dir: css   
+
+- url: /bootstrap
+  static_dir: bootstrap
+  
+- url: /font-awesome
+  static_dir: font-awesome
+  
+
+- url: /images
+  static_dir: images
+
+
+
+- url: /js
+  static_dir: js
+
+- url: /editor
+  static_dir: editor
+  
+  
+- url: /classfiles
+  static_dir: classfiles
+
+- url: /.*
+  script: index.php
+
+env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/practee-220805:asia-south1:practee;dbname=sqtry2
+  MYSQL_USER: root
+  MYSQL_PASSWORD: Test@123user
