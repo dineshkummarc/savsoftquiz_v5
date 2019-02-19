@@ -13,7 +13,7 @@ $userLogin="centerCode-2019-02-07.txt";
 $quizData="quizData-2019-02-07.txt";
 $encryptType="AES-128-ECB";
 $appName="sqMicro (Savsoft Quiz Micro) ";
-$appNameSlogan="A light weight scripts to conduct secure potential exam";
+$appNameSlogan="Local Server";
 // no of options
 $noptions="4";
 // numeric or alphabet
