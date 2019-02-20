@@ -79,7 +79,27 @@ function validateLogin(){
 }
 
 
+ function getQuestions($od){
+	 
+	$quizd=explode(PHP_EOL,$od);
+
+	$quizValidations=array();
+	$questionData=array();
+	foreach($quizd as $k => $val){
+		 
+		if($k >= 3){
+		$row=str_getcsv($val);
+			if($row[0] != ''){
+			 $questionData[$row[0]]=$row[2];
+			}
+		}
+		
+	}
+	
  
+	return $questionData;
+}
+
 
 
 $abcArr=array(

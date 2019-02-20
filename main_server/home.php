@@ -31,7 +31,7 @@ loginRequired();
 		</div>
 		<div class="col-30" >
 	 
- <h2>Generate Encrypted Files</h2>
+ <h2>1) Generate Encrypted Files</h2>
  <label>To share with local server(s)</label>
 	 <form method="post" action="<?php echo site_url('upload');?>" enctype="multipart/form-data">
 	 <br><br>
@@ -42,7 +42,7 @@ loginRequired();
 					<p style="font-size:13px;"><a href="../sample_Files/userData.csv" target="new">Download</a> sample files</p>
 				</div>
 				<div class="sqm-form-group">
-					<label>Upload Questions List</label><br>
+					<label>Upload Quiz Data (Quiz name, duration, questions list etc..)</label><br>
 					<input type="file" name="questionList" required >
 					<p style="font-size:13px;"><a href="../sample_Files/quizData.csv" target="new">Download</a> sample files</p>
 				</div>
@@ -69,10 +69,37 @@ loginRequired();
 		</div>
 		<div class="col-30">
 	 
- <h2>Generate Result</h2>
+ <h2>2) Generate Result</h2>
  <label>Upload user's response and Questions file </label>
  
+	  <form method="post" action="<?php echo site_url('generateResult');?>" enctype="multipart/form-data">
+	 <br><br>
+				<div class="sqm-form-group">
+				
+					<label>Upload user's response</label><br>
+					<input type="file" name="zipfile" required >
+					<p style="font-size:13px;">Upload zip file (Create .zip file of all responses)</p>
+				</div>
+				<div class="sqm-form-group">
+					<label>Upload Quiz Data</label><br>
+					<input type="file" name="questionList" required >
+					<p style="font-size:13px;">CSV file which you uploaded in step 1 which contain quiz and question's data </p>
+				</div>
+				<div class="sqm-form-group">
+					<label>Encryption Key </label>
+					<input type="text" name="passKey"  class="sqm-form-control" placeholder="Which used in Step 1" autocomplete="off" required >
+					 
+				</div>
+				<div class="sqm-form-group">
+					<label>Result filename </label>
+					<input type="text" name="rfilename"  class="sqm-form-control" placeholder="" autocomplete="off" onClick="this.select();" value="<?php echo time().'.csv';?>" required >
+					 
+				</div>
+				
+					<button type="submit" class="sqm-btn-primary">Generate Encrypted Files</button>
+
 	 
+	 </form>
 		
 		</div>
 		 
