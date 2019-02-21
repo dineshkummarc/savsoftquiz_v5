@@ -96,7 +96,7 @@ loginRequired();
 					 
 				</div>
 				
-					<button type="submit" class="sqm-btn-primary">Generate Encrypted Files</button>
+					<button type="submit" class="sqm-btn-primary">Generate Result File</button>
 
 	 
 	 </form>
