@@ -18,11 +18,14 @@ Savsoft Quiz Micro is compressed or tiny version (Less than 1 MB)  of Savsoft Qu
 It doesn't support features like question banks, post quiz reports or other eLearning features.
 
 <b>Where Savsoft Quiz Micro is useful?</b>
+
 If you are recruitement agency or private or Government organization/Department and wants to organize/conduct a exam on perticular date/time.
 You can host exam with the help of Savsoft Quiz Micro. 
 
 Basically it is devided into two web application.
+
 <b>1) Main Server 
+
 2) Local Server</b>
 
 Main Server is the administration level application to generate encrypted files of candidate login info (users who is taking quiz) and questions. These files are encrypted with the help of encryption key.
