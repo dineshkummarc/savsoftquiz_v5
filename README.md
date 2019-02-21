@@ -51,6 +51,7 @@ examination centre have to update config.php file with encrypted files name and 
 Username: admin
 Password: admin
 
-	 
-
+<b>To raise any issue visit: https://github.com/savsoft10/savsoftquiz_micro/issues
+For professional support and customization, you can contact us at http://micro.savsoftquiz.org/	 
+</b>
 
