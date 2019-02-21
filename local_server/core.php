@@ -86,6 +86,9 @@ function validateLogin(){
 	$_SESSION['logged_in_user']=$userid;
 	$_SESSION['logged_in_arr']=array($userid,$users[$userid][2],time(),date('Y-m-d H:i:s',time()));
 	
+
+	
+	
 	return true;			
 		}else{
 	set_flash_message('message','Error Code: L003 - Invalid Password');	
