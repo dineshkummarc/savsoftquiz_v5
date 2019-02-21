@@ -24,9 +24,9 @@ You can host exam with the help of Savsoft Quiz Micro.
 
 Basically it is devided into two web application.
 
-<b>1) Main Server 
+<b>1) Main Server</b>
 
-2) Local Server</b>
+<b>2) Local Server</b>
 
 Main Server is the administration level application to generate encrypted files of candidate login info (users who is taking quiz) and questions. These files are encrypted with the help of encryption key.
   This application can be installed on local or public server (depends upon requirements, Usually on public server). Once encrypted files are generated, these can be shared with examination centre (where quiz or exam going to host) 
