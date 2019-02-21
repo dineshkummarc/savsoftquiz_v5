@@ -10,14 +10,20 @@ After 8 years success of Savsoft Quiz application, we developed a light weight p
 What is difference between Savsoft Quiz and Savsoft Quiz Micro?
 Savsoft Quiz is the open source web application to manage online examination. It has all basic features like create question banks, create quiz, generate reports and many more eLearning features. 
 You can try online demo or download it at http://savsoftquiz.org  
-It also have enterprise version with more features, plugins and ansdroid app which is available at https://savsoftquiz.com 
+It also have enterprise version with more features, plugins and android app which is available at https://savsoftquiz.com 
 
-Now what is Savsoft Quiz Micro and how it different from Savsoft Quiz?
+<b>Now what is Savsoft Quiz Micro and how it different from Savsoft Quiz?</b>
+
 Savsoft Quiz Micro is compressed or tiny version (Less than 1 MB)  of Savsoft Quiz and only focus to conduct computer based quiz or exam on local network (intranet) instead of public internet.
 It doesn't support features like question banks, post quiz reports or other eLearning features.
+
+<b>Where Savsoft Quiz Micro is useful?</b>
+If you are recruitement agency or private or Government organization/Department and wants to organize/conduct a exam on perticular date/time.
+You can host exam with the help of Savsoft Quiz Micro. 
+
 Basically it is devided into two web application.
-1) Main Server 
-2) Local Server
+<b>1) Main Server 
+2) Local Server</b>
 
 Main Server is the administration level application to generate encrypted files of candidate login info (users who is taking quiz) and questions. These files are encrypted with the help of encryption key.
   This application can be installed on local or public server (depends upon requirements, Usually on public server). Once encrypted files are generated, these can be shared with examination centre (where quiz or exam going to host) 
@@ -31,13 +37,13 @@ Administrator will upload that zip file into main server app to generate results
 Here are the process flow diagram.
 <img src="data-flow.png">
 
-System Requirements:
+<b>System Requirements:</b>
 1) Apache
 2) PHP 5.6+ 
 3) PHP Zip library
 No Mysql or Database required
 
-Installation:
+<b>Installation:</b>
 1) Upload folder main_server and local_server to public server (or hosting) and local server (on intranet) respectively.
 2) Change writeable permission to following folders:
    local_server/input/
