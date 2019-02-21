@@ -1,5 +1,6 @@
 # Savsoft Quiz Micro
 Micro script to conduct offline exam with central control online administration.
+
 Important definition: 
 1) Quiz , Exam, test all are same terms.
 2) Candidates are the users who are taking quiz or exam.
