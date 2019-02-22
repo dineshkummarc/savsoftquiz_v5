@@ -19,7 +19,7 @@ It doesn't support features like question banks, post quiz reports or other eLea
 
 <b>Where Savsoft Quiz Micro is useful?</b>
 
-If you are recruitement agency or private or Government organization/Department and wants to organize/conduct a exam on perticular date/time.
+If you are recruitement agency or private or Government organization/Department and wants to organize/conduct an exam on perticular date/time.
 You can host exam with the help of Savsoft Quiz Micro. 
 
 Basically it is devided into two web application.
@@ -61,8 +61,8 @@ examination centre have to update config.php file with encrypted files name and 
 Username: admin
 Password: admin
 
-<b>To raise any issue visit: https://github.com/savsoft10/savsoftquiz_micro/issues
+<b>To raise any issue visit: <a href="https://github.com/savsoft10/Savsoft-Quiz-Micro/issues">https://github.com/savsoft10/Savsoft-Quiz-Micro/issues</a>
 <br>
-For professional support and customization, you can contact us at http://micro.savsoftquiz.org/	 
+For professional support and customization, you can contact us at <a href="http://micro.savsoftquiz.org/">http://micro.savsoftquiz.org/</a>	 
 </b>
 
