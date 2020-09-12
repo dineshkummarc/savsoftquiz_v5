@@ -82,14 +82,21 @@ foreach($group_list as $gk => $group){
 		<?php 
 		if($logged_in['su']=='1'){
 			?>
+<<<<<<< HEAD
 				
+=======
+				<div class='alert alert-danger'><?php echo $this->lang->line('pending_message_admin');?></div>		
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		<?php 
 		}
 		?>
 <table class="table table-bordered">
 <tr>
  <th><?php echo $this->lang->line('result_id');?></th>
+<<<<<<< HEAD
  <th><?php echo $this->lang->line('student_code');?></th>
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <th><?php echo $this->lang->line('first_name');?> <?php echo $this->lang->line('last_name');?></th>
  <th><?php echo $this->lang->line('quiz_name');?></th>
  <th><?php echo $this->lang->line('status');?>
@@ -107,7 +114,11 @@ foreach($group_list as $gk => $group){
 if(count($result)==0){
 	?>
 <tr>
+<<<<<<< HEAD
  <td colspan="7"><?php echo $this->lang->line('no_record_found');?></td>
+=======
+ <td colspan="6"><?php echo $this->lang->line('no_record_found');?></td>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 </tr>	
 	
 	
@@ -118,7 +129,10 @@ foreach($result as $key => $val){
 ?>
 <tr>
  <td><?php echo $val['rid'];?></td>
+<<<<<<< HEAD
  <td><?php echo $val['student_code'];?></td>
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <td><?php echo $val['first_name'];?> <?php echo $val['last_name'];?></td>
  <td><?php echo $val['quiz_name'];?></td>
  <td><?php echo $val['result_status'];?></td>

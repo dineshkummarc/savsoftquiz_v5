@@ -144,7 +144,11 @@ function open_quiz($limit='0'){
 	
 	function no_q_available($cid,$lid){
 		$val="<select name='noq[]'>";
+<<<<<<< HEAD
 		$query=$this->db->query(" select * from qbank where cid='$cid' and lid='$lid' ");
+=======
+		$query=$this->db->query(" select * from savsoft_qbank where cid='$cid' and lid='$lid' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		$nor=$query->num_rows();
 		for($i=0; $i<= $nor; $i++){
 			$val.="<option value='".$i."' >".$i."</option>";
@@ -461,9 +465,15 @@ function open_quiz($limit='0'){
 		'gid'=>$this->config->item('default_gid'),
 		'su'=>'0'		
 		);
+<<<<<<< HEAD
 		$this->db->insert('users',$userdata);
 		$uid=$this->db->insert_id();
 		$query=$this->db->query("select * from users where uid='$uid' ");
+=======
+		$this->db->insert('savsoft_users',$userdata);
+		$uid=$this->db->insert_id();
+		$query=$this->db->query("select * from savsoft_users where uid='$uid' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		$user=$query->row_array();
 		// creating login cookie
 		$user['base_url']=base_url();

@@ -33,9 +33,15 @@
 <tr>
  <th>#</th>
  <th><?php echo $this->lang->line('email');?></th>
+<<<<<<< HEAD
  <th>Student Code</th>
 <th><?php echo $this->lang->line('first_name');?> <?php echo $this->lang->line('last_name');?></th>
 <th><?php echo $this->lang->line('account_status');?> </th>
+=======
+<th><?php echo $this->lang->line('first_name');?> <?php echo $this->lang->line('last_name');?></th>
+<th><?php echo $this->lang->line('account_status');?> </th>
+<th><?php echo $this->lang->line('send_notification');?> </th>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <th><?php echo $this->lang->line('action');?> </th>
 </tr>
 <?php 
@@ -53,9 +59,15 @@ foreach($result as $key => $val){
 <tr>
  <td><?php echo $val['uid'];?></td>
 <td><?php echo $val['email'].' '.$val['wp_user'];?></td>
+<<<<<<< HEAD
 <td><?php echo $val['student_code'];?></td>
 <td><?php echo $val['first_name'];?> <?php echo $val['last_name'];?></td>
  <td><?php echo $val['user_status'];?></td>
+=======
+<td><?php echo $val['first_name'];?> <?php echo $val['last_name'];?></td>
+ <td><?php echo $val['user_status'];?></td>
+ <td><a href="<?php echo site_url('notification/add_new/'.$val['uid']);?>"><?php echo $this->lang->line('send_notification');?></a></td>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <td>
  
 <a href="<?php echo site_url('user2/view_user/'.$val['uid']);?>"><i class="fa fa-eye" title="View Profile"></i></a>

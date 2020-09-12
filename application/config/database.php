@@ -76,12 +76,21 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
+<<<<<<< HEAD
 	'dsn'	=> '',
 	'hostname' => $sq_hostname,
 	'username' => $sq_dbusername,
 	'password' => $sq_dbpassword,
 	'database' => $sq_dbname,
 	'dbdriver' => 'mysqli',
+=======
+	'dsn'	=> 'mysql:unix_socket=/cloudsql/practee-220805:asia-south1:practee;dbname=sqtry2',
+    'hostname' => 'http://practee-220805.appspot.com',
+	'username' => 'root',
+	'password' => 'Test@123user',
+	'database' => 'sqtry2',
+	'dbdriver' => 'pdo',
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -101,12 +110,21 @@ $db['default'] = array(
 
 
 $db['serverdb'] = array(
+<<<<<<< HEAD
 	'dsn'	=> '',
 	'hostname' => $sq_hostname,
 	'username' => $sq_dbusername,
 	'password' => $sq_dbpassword,
 	'database' => 'sv3_super_admin',
 	'dbdriver' => 'mysqli',
+=======
+	'dsn'    => 'mysql:unix_socket=/cloudsql/practee-220805:asia-south1:practee;dbname=sqtry2',
+	'hostname' => 'http://practee-220805.appspot.com',
+	'username' => 'root',
+	'password' => 'Test@123user',
+	'database' => 'sqtry2',
+	'dbdriver' => 'mysql',
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

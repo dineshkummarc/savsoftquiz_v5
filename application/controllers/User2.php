@@ -41,10 +41,17 @@ class User2 extends CI_Controller {
 			$data['uid']=$uid;
 	        $data['title']=$this->lang->line('profile');
 	        
+<<<<<<< HEAD
 	        $query1=$this->db->query(" select * from result where uid='$uid' order by rid desc ");
 	        $res1=$query1->result_array();
 	        $query2=$this->db->query(" select * from result where uid='$uid' and result_status='Pass' ");
 	        $query3=$this->db->query(" select * from result where uid='$uid' and result_status='Fail' ");
+=======
+	        $query1=$this->db->query(" select * from savsoft_result where uid='$uid' order by rid desc ");
+	        $res1=$query1->result_array();
+	        $query2=$this->db->query(" select * from savsoft_result where uid='$uid' and result_status='Pass' ");
+	        $query3=$this->db->query(" select * from savsoft_result where uid='$uid' and result_status='Fail' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	        if($query1->num_rows()==0){
 	        $data['lastattempt']="Not attempted any quiz";
 	        }else{
@@ -120,9 +127,15 @@ class User2 extends CI_Controller {
 	         $incorrect_answers_new=array_filter($incorrect_answers_new);
 	         $incorrect_answers_new=implode(',',$incorrect_answers_new);
 	       // getting questions
+<<<<<<< HEAD
 	       $query4=$this->db->query(" select * from qbank where qid in ($incorrect_answers_new) ");
 	       $questions=$query4->result_array();
 	       $query5=$this->db->query(" select * from options where qid in ($incorrect_answers_new) ");
+=======
+	       $query4=$this->db->query(" select * from savsoft_qbank where qid in ($incorrect_answers_new) ");
+	       $questions=$query4->result_array();
+	       $query5=$this->db->query(" select * from savsoft_options where qid in ($incorrect_answers_new) ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	       $options=$query5->result_array();
 	          }
 	        $data['questions']=$questions;

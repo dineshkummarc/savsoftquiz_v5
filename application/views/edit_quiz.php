@@ -118,7 +118,11 @@
 					<label   ><?php echo $this->lang->line('quiz_template');?></label> <br>
 					<select name="quiz_template">
 					<option value="Default" <?php if($quiz['quiz_template']=="Default"){ echo 'selected';} ?> >Default</option>
+<<<<<<< HEAD
 					<!-- <option value="Advance"  <?php if($quiz['quiz_template']=="Advance"){ echo 'selected';} ?> >Advance</option> -->
+=======
+					<option value="Advance"  <?php if($quiz['quiz_template']=="Advance"){ echo 'selected';} ?> >Advance</option>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					
 					</select>
 </div>
@@ -303,7 +307,11 @@ if(count($qcl)==0){
 					 <span id="no_q_available"></span>
 					 
 					 <br>
+<<<<<<< HEAD
 <?php echo $this->lang->line('correct_score');?> <input type="text" name="i_correct[]" style="width:40px;" value="1"> | <?php echo $this->lang->line('incorrect_score');?> <input type="text" style="width:40px;" name="i_incorrect[]" value="0"> 
+=======
+<?php echo $this->lang->line('correct_score');?> <input type="text" name="i_correct[]" style="width:40px;" value="1"> | <?php echo $this->lang->line('incorrect_score');?><input type="text" style="width:40px;" name="i_incorrect[]" value="0"> 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 			</div>
 

@@ -22,7 +22,11 @@
 		?>	
 		
 				<div class="form-group">	 
+<<<<<<< HEAD
 				<?php echo $this->lang->line('group_name');?>: <?php echo $result['group_name'];?>
+=======
+				<?php echo $this->lang->line('group_name');?>: <?php echo $result['group_name'];?> (<?php echo $this->lang->line('price_');?>: <?php echo $result['price'];?>)
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 				</div>
 				
 				
@@ -32,10 +36,13 @@
 					<input type="email" id="inputEmail" name="email" value="<?php echo $result['email'];?>" class="form-control" placeholder="<?php echo $this->lang->line('email_address');?>" required autofocus>
 			</div>
 			<div class="form-group">	  
+<<<<<<< HEAD
 					<label for="inputStudentCode" class="sr-only"><?php echo $this->lang->line('student_code');?></label>
 					<input type="text" id="inputStudentCode" name="studentCode"   value="<?php echo $result['student_code'];?>" class="form-control" placeholder="<?php echo $this->lang->line('student_code');?>"   >
 			 </div>
 			<div class="form-group">	  
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					<label for="inputPassword" class="sr-only"><?php echo $this->lang->line('password');?></label>
 					<input type="password" id="inputPassword" name="password"   value=""  class="form-control" placeholder="<?php echo $this->lang->line('password');?>"   >
 			 </div>
@@ -58,7 +65,11 @@
 					foreach($group_list as $key => $val){
 						?>
 						
+<<<<<<< HEAD
 						<option value="<?php echo $val['gid'];?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?> ><?php echo $val['group_name'];?></option>
+=======
+						<option value="<?php echo $val['gid'];?>" <?php if($result['gid']==$val['gid']){ echo 'selected';}?> ><?php echo $val['group_name'];?> (<?php echo $this->lang->line('price_');?>: <?php echo $val['price'];?>)</option>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 						<?php 
 					}
 					?>
@@ -101,5 +112,53 @@
 
 
 
+<<<<<<< HEAD
+=======
+<div class="row">
+<div class="col-md-8">
+<h3><?php echo $this->lang->line('payment_history');?></h3>
+<table class="table table-bordered">
+<tr>
+ <th><?php echo $this->lang->line('payment_gateway');?></th>
+<th><?php echo $this->lang->line('paid_date');?> </th>
+<th><?php echo $this->lang->line('amount');?></th>
+<th><?php echo $this->lang->line('transaction_id');?> </th>
+<th><?php echo $this->lang->line('status');?> </th>
+</tr>
+<?php 
+if(count($payment_history)==0){
+	?>
+<tr>
+ <td colspan="5"><?php echo $this->lang->line('no_record_found');?></td>
+</tr>	
+	
+	
+	<?php
+}
+foreach($payment_history as $key => $val){
+?>
+<tr>
+ <td><?php echo $val['payment_gateway'];?></td>
+ <td><?php echo date('Y-m-d H:i:s',$val['paid_date']);?></td>
+ <td><?php echo $val['amount'];?></td>
+ <td><?php echo $val['transaction_id'];?></td>
+ <td><?php echo $val['payment_status'];?></td>
+ 
+</tr>
+
+<?php 
+}
+?>
+</table>
+
+</div>
+
+</div>
+
+
+ 
+
+
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 </div>

@@ -15,7 +15,11 @@
 	<div class="login-panel panel panel-default">
 		<div class="panel-body"> 
 		<center>
+<<<<<<< HEAD
 		<h5 style="font-size: 24px;color: blue;">Quiz Exam Online</h5>
+=======
+		<a href="<?php echo base_url();?>"><img src="<?php echo base_url('images/logo.png');?>"></a><br>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <?php echo $this->lang->line('login_tagline');?>
 		</center>
 
@@ -51,7 +55,11 @@
 <?php 
 if($this->config->item('user_registration')){
 	?>
+<<<<<<< HEAD
 	<a href="<?php echo site_url('login/registration');?>"><?php echo $this->lang->line('register_new_account');?></a>
+=======
+	<a href="<?php echo site_url('login/pre_registration');?>"><?php echo $this->lang->line('register_new_account');?></a>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	&nbsp;&nbsp;&nbsp;&nbsp;
 <?php
 }

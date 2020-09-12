@@ -104,6 +104,7 @@ class Login extends CI_Controller {
 		$username=urldecode($p1);
 		$password=urldecode($p2);
 		}
+<<<<<<< HEAD
 
 		// check xem co đang bị khóa k, có thì redirect và thông báo
 		if($this->session->tempdata('penalty')){
@@ -198,11 +199,83 @@ class Login extends CI_Controller {
 				$this->session->set_flashdata('message', $status['message']);
 				redirect('login');
 			}
+=======
+		 $status=$this->user_model->login($username,$password);
+		if($status['status']=='1'){
+			$this->load->helper('url');
+			// row exist fetch userdata
+			$user=$status['user'];
+			
+			
+			// validate if user assigned to paid group
+			if($user['price'] > '0'){
+				
+				// user assigned to paid group now validate expiry date.
+				if($user['subscription_expired'] <= time()){
+					// eubscription expired, redirect to payment page
+					
+					redirect('payment_gateway/subscription_expired/'.$user['uid']);
+					
+				}
+				
+			}
+			$user['base_url']=base_url();
+			// creating login cookie
+			$this->session->set_userdata('logged_in', $user);
+			// redirect to dashboard
+			if($user['su']=='1'){
+			 redirect('dashboard');
+				 
+			}else{
+				$burl=$this->config->item('base_url').'index.php/quiz';
+			 header("location:$burl");
+			}
+		}else if($status['status']=='0'){
+			 
+			// invalid login
+			// try to auth wp
+			if($this->config->item('wp-login')){
+			 
+		                if($this->authentication($username, $password)){
+		               
+		                 $this->verifylogin($username, $password);
+		                }else{
+		                 $this->load->helper('url');
+		                 $this->session->set_flashdata('message', $status['message']);
+			 $burl=$this->config->item('base_url');
+			 header("location:$burl");
+		                }
+		        }else{
+		        
+		        $this->load->helper('url');
+		        $this->session->set_flashdata('message', $status['message']);
+			redirect('login');
+		        }
+		        
+			
+		}else if($status['status']=='2'){
+                        $this->load->helper('url');
+
+			 
+			// email not verified
+			$this->session->set_flashdata('message', $status['message']);
+			redirect('login');
+		}else if($status['status']=='3'){
+                        $this->load->helper('url');
+
+			 
+			// email not verified
+			$this->session->set_flashdata('message', $status['message']);
+			redirect('login');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		}
 		
 		
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	}
 	
 	
@@ -252,15 +325,24 @@ class Login extends CI_Controller {
 	
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		public function insert_user()
 	{
 		
 		
 		 $this->load->helper('url');
 		$this->load->library('form_validation');
+<<<<<<< HEAD
 		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
 		$this->form_validation->set_rules('studentCode', 'Student Code', 'required|is_unique[users.student_code]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|alpha_numeric');
+=======
+		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[savsoft_users.email]');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
           if ($this->form_validation->run() == FALSE)
                 {
                      $this->session->set_flashdata('message', "<div class='alert alert-danger'>".validation_errors()." </div>");
@@ -328,9 +410,15 @@ class Login extends CI_Controller {
                       $status = false;
                     } else {
                     
+<<<<<<< HEAD
                     // if username already exist in users
                     $this->db->where('wp_user',$user);
                     $query=$this->db->get('users');
+=======
+                    // if username already exist in savsoft_users
+                    $this->db->where('wp_user',$user);
+                    $query=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
                     if($query->num_rows()==0){
                     $userdata=array(
                     'password'=>md5($pass),
@@ -339,7 +427,11 @@ class Login extends CI_Controller {
                     'gid'=>$this->config->item('default_group')                  
                     
                     );
+<<<<<<< HEAD
                     $this->db->insert('users',$userdata);
+=======
+                    $this->db->insert('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
                     
                     }
                     

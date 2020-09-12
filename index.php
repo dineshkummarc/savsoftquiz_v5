@@ -4,7 +4,11 @@ ob_start();
 * Set default time zone 
 * find supported parameter or time zones at http://php.net/manual/en/timezones.php
 */
+<<<<<<< HEAD
 date_default_timezone_set('Asia/ho_chi_minh');
+=======
+date_default_timezone_set('Asia/Kolkata');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 /**
  * CodeIgniter
  *

@@ -27,10 +27,13 @@
 					<input type="email" id="inputEmail" name="email" class="form-control" placeholder="<?php echo $this->lang->line('email_address');?>" required autofocus>
 			</div>
 			<div class="form-group">	  
+<<<<<<< HEAD
 					<label for="inputStudentCode" class="sr-only"><?php echo $this->lang->line('student_code');?></label>
 					<input type="text" id="inputStudentCode" name="studentCode"  class="form-control" placeholder="<?php echo $this->lang->line('student_code');?>" required >
 			 </div>
 			<div class="form-group">	  
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					<label for="inputPassword" class="sr-only"><?php echo $this->lang->line('password');?></label>
 					<input type="password" id="inputPassword" name="password"  class="form-control" placeholder="<?php echo $this->lang->line('password');?>" required >
 			 </div>
@@ -53,7 +56,11 @@
 					foreach($group_list as $key => $val){
 						?>
 						
+<<<<<<< HEAD
 						<option value="<?php echo $val['gid'];?>"><?php echo $val['group_name'];?></option>
+=======
+						<option value="<?php echo $val['gid'];?>"><?php echo $val['group_name'];?> (<?php echo $this->lang->line('price_');?>: <?php echo $val['price'];?>)</option>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 						<?php 
 					}
 					?>
@@ -61,7 +68,11 @@
 			</div>
 			<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('subscription_expired');?></label> 
+<<<<<<< HEAD
 					<input type="text" name="subscription_expired" class="form-control" value="<?php      $time = time()+157680000; echo date('Y-m-d H:i:s',$time); ?>">
+=======
+					<input type="text" name="subscription_expired"  id="subscription_expired" class="form-control" placeholder="<?php echo $this->lang->line('subscription_expired');?>"    autofocus>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			</div>
 
 				<div class="form-group">	 

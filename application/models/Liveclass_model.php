@@ -141,7 +141,11 @@ class Liveclass_model extends CI_Model {
 			}
 			
 					$this->db->where("class_coment.class_id",$class_id);
+<<<<<<< HEAD
 					$this->db->join("users","users.uid=class_coment.content_by");
+=======
+					$this->db->join("savsoft_users","savsoft_users.uid=class_coment.content_by");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					$query=$this->db->get("class_coment");
 					//print_r($this->db->last_query());
 					return $query->result_array();

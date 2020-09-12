@@ -26,7 +26,11 @@ class Api extends CI_Controller {
 	}
 
 		public function get_group(){
+<<<<<<< HEAD
 		$query=$this->db->query("select * from group ");
+=======
+		$query=$this->db->query("select * from savsoft_group ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		$result=$query->result_array();
 		$groups=array();
 		foreach($result as $key => $val){
@@ -52,7 +56,11 @@ $groups[]=array('gid'=>$val['gid'],'group_name'=>$val['group_name'].' Price:'.$v
 		'password'=>md5('12345')
 		);
 		$this->db->where('uid','5');
+<<<<<<< HEAD
 		$this->db->update('users',$userdata);
+=======
+		$this->db->update('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 	}
 	
@@ -104,7 +112,11 @@ exit();
             'connection_key'=>$user['user']['connection_key'],
             );
             $this->db->where('uid',$uid);
+<<<<<<< HEAD
             $this->db->update('users',$userdata);
+=======
+            $this->db->update('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
            
             print_r(json_encode($user));
         }else{
@@ -122,7 +134,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -139,7 +155,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			 $this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -163,7 +183,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -185,7 +209,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -209,7 +237,11 @@ exit();
 		 
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -223,7 +255,11 @@ exit();
 				 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$this->db->update('users',$userdata);
+=======
+			$this->db->update('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 				exit("Information updated successfully");
 
 			}
@@ -235,7 +271,11 @@ exit();
 		 
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -296,7 +336,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -346,7 +390,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -368,7 +416,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -394,7 +446,11 @@ exit();
 			
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->get('users');
+=======
+			$auth=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$user=$auth->row_array();
 			if($auth->num_rows()==0){
 				exit('invalid Connection!');
@@ -458,7 +514,11 @@ function register($email,$first_name,$last_name,$password,$contact_no,$gid){
 			exit('Registration is closed by administrator');
 		}
 $email=urldecode($email);
+<<<<<<< HEAD
 $query=$this->db->query("select * from users where email='$email' ");
+=======
+$query=$this->db->query("select * from savsoft_users where email='$email' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 if($query->num_rows() >= 1){
 exit('Email address already exist');
 }
@@ -503,7 +563,11 @@ function forgot($user_email){
 			$userdata=array('connection_key'=>'');
 			$this->db->where('uid',$uid);
 			$this->db->where('connection_key',$connection_key);
+<<<<<<< HEAD
 			$auth=$this->db->update('users',$userdata);		
+=======
+			$auth=$this->db->update('savsoft_users',$userdata);		
+>>>>>>> savsoftquiz_v4.0_advance-master/master
   exit("Account logged out successfully!");
 		
 	}

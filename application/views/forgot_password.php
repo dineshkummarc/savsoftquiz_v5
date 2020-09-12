@@ -13,7 +13,11 @@
 
 	<div class="login-panel panel panel-default">
 		<div class="panel-body"> 
+<<<<<<< HEAD
 		<span style="font-size: 24px;color: blue;">Quiz Exam Online </span>
+=======
+		<img src="<?php echo base_url('images/logo.png');?>">
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		
 
 			<form method="post" class="form-signin" action="<?php echo site_url('login/forgot');?>">

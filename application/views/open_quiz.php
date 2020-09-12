@@ -3,7 +3,11 @@
 <div class="col-md-1">
 </div>
 <div class="col-md-10">
+<<<<<<< HEAD
 <span style="font-size: 24px;color: blue;">Quiz Exam Online </span>
+=======
+<a href="<?php echo base_url();?>"><img src="<?php echo base_url('images/logo.png');?>"></a>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <?php echo $this->lang->line('login_tagline');?>
 </div>
 <div class="col-md-1">

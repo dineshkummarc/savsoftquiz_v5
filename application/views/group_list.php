@@ -20,6 +20,10 @@
 <table class="table table-bordered">
 <tr>
  <th><?php echo $this->lang->line('group_name');?></th>
+<<<<<<< HEAD
+=======
+ <th><?php echo $this->lang->line('price'); ?></th>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  <th><?php echo $this->lang->line('valid_for_days');?></th>
 <th><?php echo $this->lang->line('action');?> </th>
 </tr>
@@ -38,6 +42,12 @@ foreach($group_list as $key => $val){
 ?>
 <tr>
  <td> <?php echo $val['group_name'];?></td>
+<<<<<<< HEAD
+=======
+ <td>
+ <?php echo $this->config->item('base_currency_prefix');?> <?php echo $val['price'];?>
+  <?php echo $this->config->item('base_currency_sufix');?>  </td>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  <td><?php echo $val['valid_for_days'];?></td>
 <td>
 <a href="<?php echo site_url('user/edit_group/'.$val['gid']);?>"><img src="<?php echo base_url('images/edit.png');?>"></a>

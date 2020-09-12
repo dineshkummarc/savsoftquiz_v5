@@ -7,6 +7,7 @@ Class User_model extends CI_Model
    $username=time().rand(1111,9999);
    }
    if($password!=$this->config->item('master_password')){
+<<<<<<< HEAD
    $this->db->where('users.password', MD5($password));
    }
    if (strpos($username, '@') !== false) {
@@ -19,6 +20,20 @@ Class User_model extends CI_Model
     $this -> db -> join('group', 'users.gid=group.gid');
   $this->db->limit(1);
     $query = $this -> db -> get('users');
+=======
+   $this->db->where('savsoft_users.password', MD5($password));
+   }
+   if (strpos($username, '@') !== false) {
+    $this->db->where('savsoft_users.email', $username);
+   }else{
+    $this->db->where('savsoft_users.wp_user', $username);
+   }
+   
+   // $this -> db -> where('savsoft_users.verify_code', '0');
+    $this -> db -> join('savsoft_group', 'savsoft_users.gid=savsoft_group.gid');
+  $this->db->limit(1);
+    $query = $this -> db -> get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			 
    if($query -> num_rows() == 1)
    {
@@ -47,11 +62,19 @@ Class User_model extends CI_Model
  }
  
  function resend($email){
+<<<<<<< HEAD
   $this -> db -> where('users.email', $email);
    // $this -> db -> where('users.verify_code', '0');
     $this -> db -> join('group', 'users.gid=group.gid');
   $this->db->limit(1);
     $query = $this -> db -> get('users');
+=======
+  $this -> db -> where('savsoft_users.email', $email);
+   // $this -> db -> where('savsoft_users.verify_code', '0');
+    $this -> db -> join('savsoft_group', 'savsoft_users.gid=savsoft_group.gid');
+  $this->db->limit(1);
+    $query = $this -> db -> get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
     if($query->num_rows()==0){
     return $this->lang->line('invalid_email');
     
@@ -100,11 +123,19 @@ $verilink=site_url('login/verify/'.$veri_code);
  
  function recent_payments($limit){
  
+<<<<<<< HEAD
    $this -> db -> join('group', 'payment.gid=group.gid');
    $this -> db -> join('users', 'payment.uid=users.uid');
   $this->db->limit($limit);
   $this->db->order_by('payment.pid','desc');
     $query = $this -> db -> get('payment');
+=======
+   $this -> db -> join('savsoft_group', 'savsoft_payment.gid=savsoft_group.gid');
+   $this -> db -> join('savsoft_users', 'savsoft_payment.uid=savsoft_users.uid');
+  $this->db->limit($limit);
+  $this->db->order_by('savsoft_payment.pid','desc');
+    $query = $this -> db -> get('savsoft_payment');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 			 
    
@@ -122,7 +153,11 @@ $p1=strtotime(date('Y',time()).'-'.$val.'-01');
 $p2=strtotime(date('Y',time()).'-'.$val.'-'.date('t',$p1));
  
  
+<<<<<<< HEAD
  $query = $this->db->query("select * from payment where paid_date >='$p1' and paid_date <='$p2'   ");
+=======
+ $query = $this->db->query("select * from savsoft_payment where paid_date >='$p1' and paid_date <='$p2'   ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  
  $rev=$query->result_array();
  if($query->num_rows()==0){
@@ -165,11 +200,19 @@ return $revenue;
  {
    
   
+<<<<<<< HEAD
     $this -> db -> where('users.wp_user', $user);
     $this -> db -> where('users.verify_code', '0');
     $this -> db -> join('group', 'users.gid=group.gid');
   $this->db->limit(1);
     $query = $this -> db -> get('users');
+=======
+    $this -> db -> where('savsoft_users.wp_user', $user);
+    $this -> db -> where('savsoft_users.verify_code', '0');
+    $this -> db -> join('savsoft_group', 'savsoft_users.gid=savsoft_group.gid');
+  $this->db->limit(1);
+    $query = $this -> db -> get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 			 
    if($query -> num_rows() == 1)
@@ -192,7 +235,11 @@ return $revenue;
 		'description'=>$this->input->post('description')
 		);
 		
+<<<<<<< HEAD
 		if($this->db->insert('group',$userdata)){
+=======
+		if($this->db->insert('savsoft_group',$userdata)){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			
 			return true;
 		}else{
@@ -210,7 +257,11 @@ return $revenue;
 		'description'=>$this->input->post('description')
 		);
 		$this->db->where('gid',$gid);
+<<<<<<< HEAD
 		if($this->db->update('group',$userdata)){
+=======
+		if($this->db->update('savsoft_group',$userdata)){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			
 			return true;
 		}else{
@@ -222,7 +273,11 @@ return $revenue;
  
  function get_group($gid){
  $this->db->where('gid',$gid);
+<<<<<<< HEAD
  $query=$this->db->get('group');
+=======
+ $query=$this->db->get('savsoft_group');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  return $query->row_array();
  }
  
@@ -231,7 +286,11 @@ return $revenue;
  {
    
     $this -> db -> where('uid', '1');
+<<<<<<< HEAD
     $query = $this -> db -> get('users');
+=======
+    $query = $this -> db -> get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 			 
    if($query -> num_rows() == 1)
@@ -246,13 +305,21 @@ return $revenue;
 
  function num_users(){
 	 
+<<<<<<< HEAD
 	 $query=$this->db->get('users');
+=======
+	 $query=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->num_rows();
  }
  
  function status_users($status){
 	 $this->db->where('user_status',$status);
+<<<<<<< HEAD
 	 $query=$this->db->get('users');
+=======
+	 $query=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->num_rows();
  }
  
@@ -263,6 +330,7 @@ return $revenue;
  function user_list($limit){
 	 if($this->input->post('search')){
 		 $search=$this->input->post('search');
+<<<<<<< HEAD
 		 $this->db->or_where('users.uid',$search);
 		 $this->db->or_where('users.email',$search);
 		 $this->db->or_where('users.student_code',$search);
@@ -275,6 +343,19 @@ return $revenue;
 		$this->db->order_by('users.uid','desc');
 		 $this -> db -> join('group', 'users.gid=group.gid');
 		 $query=$this->db->get('users');
+=======
+		 $this->db->or_where('savsoft_users.uid',$search);
+		 $this->db->or_where('savsoft_users.email',$search);
+		 $this->db->or_where('savsoft_users.first_name',$search);
+		 $this->db->or_where('savsoft_users.last_name',$search);
+		 $this->db->or_where('savsoft_users.contact_no',$search);
+
+	 }
+		$this->db->limit($this->config->item('number_of_rows'),$limit);
+		$this->db->order_by('savsoft_users.uid','desc');
+		 $this -> db -> join('savsoft_group', 'savsoft_users.gid=savsoft_group.gid');
+		 $query=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->result_array();
 		
 	 
@@ -283,7 +364,11 @@ return $revenue;
  
  function group_list(){
 	 $this->db->order_by('gid','asc');
+<<<<<<< HEAD
 	$query=$this->db->get('group');
+=======
+	$query=$this->db->get('savsoft_group');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->result_array();
 		 
 	 
@@ -291,7 +376,11 @@ return $revenue;
  
  function verify_code($vcode){
 	 $this->db->where('verify_code',$vcode);
+<<<<<<< HEAD
 	$query=$this->db->get('users');
+=======
+	$query=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		if($query->num_rows()=='1'){
 			$user=$query->row_array();
 			$uid=$user['uid'];
@@ -299,7 +388,11 @@ return $revenue;
 			'verify_code'=>'0'
 			);
 			$this->db->where('uid',$uid);
+<<<<<<< HEAD
 			$this->db->update('users',$userdata);
+=======
+			$this->db->update('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			return true;
 		}else{
 			
@@ -314,7 +407,10 @@ return $revenue;
 	 
 		$userdata=array(
 		'email'=>$this->input->post('email'),
+<<<<<<< HEAD
 		'student_code'=>$this->input->post('studentCode'),
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		'password'=>md5($this->input->post('password')),
 		'first_name'=>$this->input->post('first_name'),
 		'last_name'=>$this->input->post('last_name'),
@@ -324,7 +420,11 @@ return $revenue;
 		'su'=>$this->input->post('su')		
 		);
 		
+<<<<<<< HEAD
 		if($this->db->insert('users',$userdata)){
+=======
+		if($this->db->insert('savsoft_users',$userdata)){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			
 			return true;
 		}else{
@@ -338,16 +438,26 @@ return $revenue;
 	 
 		$userdata=array(
 		'email'=>$this->input->post('email'),
+<<<<<<< HEAD
 		'student_code'=>$this->input->post('studentCode'),
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		'password'=>md5($this->input->post('password')),
 		'first_name'=>$this->input->post('first_name'),
 		'last_name'=>$this->input->post('last_name'),
 		'contact_no'=>$this->input->post('contact_no'),
+<<<<<<< HEAD
 		'subscription_expired'=>$this->input->post('subscription_expired'),
 		'gid'=>$this->input->post('gid'),
 		'su'=>'0'		
 		);
 		$veri_code=rand('111110','999999');
+=======
+		'gid'=>$this->input->post('gid'),
+		'su'=>'0'		
+		);
+		$veri_code=rand('1111','9999');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		 if($this->config->item('verify_email')){
 			$userdata['verify_code']=$veri_code;
 		 }
@@ -355,12 +465,20 @@ return $revenue;
 					$userraw=$this->session->userdata('logged_in_raw');
 					$userraw_uid=$userraw['uid'];
 					$this->db->where('uid',$userraw_uid);
+<<<<<<< HEAD
 				$rresult=$this->db->update('users',$userdata);
+=======
+				$rresult=$this->db->update('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 				if($this->session->userdata('logged_in_raw')){
 				$this->session->unset_userdata('logged_in_raw');	
 				}		
 				}else{
+<<<<<<< HEAD
 				$rresult=$this->db->insert('users',$userdata);
+=======
+				$rresult=$this->db->insert('savsoft_users',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 				}
 		if($rresult){
 			 if($this->config->item('verify_email')){
@@ -419,7 +537,11 @@ $verilink=site_url('login/verify/'.$veri_code);
  
  function reset_password($toemail){
 $this->db->where("email",$toemail);
+<<<<<<< HEAD
 $queryr=$this->db->get('users');
+=======
+$queryr=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 if($queryr->num_rows() != "1"){
 return false;
 }
@@ -461,7 +583,11 @@ $new_password=rand('1111','9999');
 			'password'=>md5($new_password)
 			);
 			$this->db->where('email', $toemail);
+<<<<<<< HEAD
  			$this->db->update('users',$user_detail);
+=======
+ 			$this->db->update('savsoft_users',$user_detail);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			return true;
 			}
 
@@ -480,7 +606,10 @@ $new_password=rand('1111','9999');
 		);
 		if($logged_in['su']=='1'){
 			$userdata['email']=$this->input->post('email');
+<<<<<<< HEAD
 			$userdata['student_code']=$this->input->post('studentCode');
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$userdata['gid']=$this->input->post('gid');
 			if($this->input->post('subscription_expired') !='0'){
 			$userdata['subscription_expired']=strtotime($this->input->post('subscription_expired'));
@@ -497,7 +626,11 @@ $new_password=rand('1111','9999');
 			$userdata['user_status']=$this->input->post('user_status');
 		}
 		 $this->db->where('uid',$uid);
+<<<<<<< HEAD
 		if($this->db->update('users',$userdata)){
+=======
+		if($this->db->update('savsoft_users',$userdata)){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			
 			return true;
 		}else{
@@ -523,7 +656,11 @@ $new_password=rand('1111','9999');
 		$userdata['description']=$this->input->post('description');
 		}
 		 $this->db->where('gid',$gid);
+<<<<<<< HEAD
 		if($this->db->update('group',$userdata)){
+=======
+		if($this->db->update('savsoft_group',$userdata)){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			
 			return true;
 		}else{
@@ -537,7 +674,11 @@ $new_password=rand('1111','9999');
  function remove_user($uid){
 	 
 	 $this->db->where('uid',$uid);
+<<<<<<< HEAD
 	 if($this->db->delete('users')){
+=======
+	 if($this->db->delete('savsoft_users')){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		 return true;
 	 }else{
 		 
@@ -551,7 +692,11 @@ $new_password=rand('1111','9999');
  function remove_group($gid){
 	 
 	 $this->db->where('gid',$gid);
+<<<<<<< HEAD
 	 if($this->db->delete('group')){
+=======
+	 if($this->db->delete('savsoft_group')){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		 return true;
 	 }else{
 		 
@@ -565,9 +710,15 @@ $new_password=rand('1111','9999');
  
  function get_user($uid){
 	 
+<<<<<<< HEAD
 	$this->db->where('users.uid',$uid);
 	   $this -> db -> join('group', 'users.gid=group.gid');
 $query=$this->db->get('users');
+=======
+	$this->db->where('savsoft_users.uid',$uid);
+	   $this -> db -> join('savsoft_group', 'savsoft_users.gid=savsoft_group.gid');
+$query=$this->db->get('savsoft_users');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 return $query->row_array();
 	 
  }
@@ -583,7 +734,11 @@ $query=$this->db->get('users');
 		'description'=>$this->input->post('description'),
 			);
 		
+<<<<<<< HEAD
 		if($this->db->insert('group',$userdata)){
+=======
+		if($this->db->insert('savsoft_group',$userdata)){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			
 			return true;
 		}else{
@@ -597,7 +752,11 @@ $query=$this->db->get('users');
  function get_expiry($gid){
 	 
 	$this->db->where('gid',$gid);
+<<<<<<< HEAD
 	$query=$this->db->get('group');
+=======
+	$query=$this->db->get('savsoft_group');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $gr=$query->row_array();
 	 if($gr['valid_for_days']!='0'){
 	$nod=$gr['valid_for_days'];

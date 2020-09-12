@@ -21,7 +21,11 @@ Class Quiz_model extends CI_Model
 	 }
 		 $this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('quid','desc');
+<<<<<<< HEAD
 		$query=$this->db->get('quiz');
+=======
+		$query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->result_array();
 		
 	 
@@ -33,7 +37,11 @@ Class Quiz_model extends CI_Model
 	 
 		$this->db->limit($limit);
 		$this->db->order_by('quid','desc');
+<<<<<<< HEAD
 		$query=$this->db->get('quiz');
+=======
+		$query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->result_array();
 }
  
@@ -42,14 +50,22 @@ Class Quiz_model extends CI_Model
 	 
 		$this->db->limit($this->config->item('number_of_rows'),$limit);
 		$this->db->order_by('quid','desc');
+<<<<<<< HEAD
 		$query=$this->db->get('quiz');
+=======
+		$query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->result_array();
 }
  
  
  function num_quiz(){
 	 
+<<<<<<< HEAD
 	 $query=$this->db->get('quiz');
+=======
+	 $query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		return $query->num_rows();
  }
  
@@ -78,7 +94,11 @@ Class Quiz_model extends CI_Model
 	 if($this->input->post('certificate_text')){
 		$userdata['certificate_text']=$this->input->post('certificate_text'); 
 	 }
+<<<<<<< HEAD
 	  $this->db->insert('quiz',$userdata);
+=======
+	  $this->db->insert('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $quid=$this->db->insert_id();
 	return $quid;
 	 
@@ -112,15 +132,26 @@ Class Quiz_model extends CI_Model
 	 }
  
 	  $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	  $this->db->update('quiz',$userdata);
 	  
 	  $this->db->where('quid',$quid);
 	  $query=$this->db->get('quiz',$userdata);
+=======
+	  $this->db->update('savsoft_quiz',$userdata);
+	  
+	  $this->db->where('quid',$quid);
+	  $query=$this->db->get('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $quiz=$query->row_array();
 	 if($quiz['question_selection']=='1'){
 		 
 	  $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	  $this->db->delete('qcl');
+=======
+	  $this->db->delete('savsoft_qcl');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
                 $correct_i=array();
         	 $incorrect_i=array();	 
 	 foreach($_POST['cid'] as $ck => $val){
@@ -134,7 +165,11 @@ Class Quiz_model extends CI_Model
 		 'i_incorrect'=>$_POST['i_incorrect'][$ck],
 		 'noq'=>$_POST['noq'][$ck]
 		 );
+<<<<<<< HEAD
 		 $this->db->insert('qcl',$userdata);
+=======
+		 $this->db->insert('savsoft_qcl',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		  for($i=1; $i<=$_POST['noq'][$ck]; $i++){
 $correct_i[]=$_POST['i_correct'][$ck];
 $incorrect_i[]=$_POST['i_incorrect'][$ck];
@@ -148,7 +183,11 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
 		 'incorrect_score'=>implode(',',$incorrect_i)
 	);
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	  $this->db->update('quiz',$userdata);
+=======
+	  $this->db->update('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 }else{
 			$correct_i=array();
 			 $incorrect_i=array();
@@ -163,7 +202,11 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
 		 
 			);
 	  $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	  $this->db->update('quiz',$userdata);
+=======
+	  $this->db->update('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 
 }
@@ -179,6 +222,7 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
 	 }
 /*
 	 if($cid!='0'){
+<<<<<<< HEAD
 		 $this->db->where('qbank.cid',$cid);
 	 }
 	 if($lid!='0'){
@@ -188,6 +232,17 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
 	  
 	 $query=$this->db->query("select * from qbank join category on category.cid=qbank.cid join level on level.lid=qbank.lid 
 	 where qbank.qid in ($qids) order by FIELD(qbank.qid,$qids) 
+=======
+		 $this->db->where('savsoft_qbank.cid',$cid);
+	 }
+	 if($lid!='0'){
+		 $this->db->where('savsoft_qbank.lid',$lid);
+	 }
+*/
+	  
+	 $query=$this->db->query("select * from savsoft_qbank join savsoft_category on savsoft_category.cid=savsoft_qbank.cid join savsoft_level on savsoft_level.lid=savsoft_qbank.lid 
+	 where savsoft_qbank.qid in ($qids) order by FIELD(savsoft_qbank.qid,$qids) 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 ");
 	 return $query->result_array();
 	 
@@ -197,7 +252,11 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
  function get_options($qids){
 	 
 	 
+<<<<<<< HEAD
 	 $query=$this->db->query("select * from options where qid in ($qids) order by FIELD(options.qid,$qids)");
+=======
+	 $query=$this->db->query("select * from savsoft_options where qid in ($qids) order by FIELD(savsoft_options.qid,$qids)");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 return $query->result_array();
 	 
  }
@@ -206,7 +265,11 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
  
  function up_question($quid,$qid){
   	$this->db->where('quid',$quid);
+<<<<<<< HEAD
  	$query=$this->db->get('quiz');
+=======
+ 	$query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  	$result=$query->row_array();
  	$qids=$result['qids'];
  	if($qids==""){
@@ -233,7 +296,11 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
  	'qids'=>$qids
  	);
  		$this->db->where('quid',$quid);
+<<<<<<< HEAD
 	$this->db->update('quiz',$userdata);
+=======
+	$this->db->update('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 }
 
@@ -241,7 +308,11 @@ $incorrect_i[]=$_POST['i_incorrect'][$ck];
 
 function down_question($quid,$qid){
   	$this->db->where('quid',$quid);
+<<<<<<< HEAD
  	$query=$this->db->get('quiz');
+=======
+ 	$query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  	$result=$query->row_array();
  	$qids=$result['qids'];
  	if($qids==""){
@@ -270,7 +341,11 @@ $kk=$k+1;
  	'qids'=>$qids
  	);
  		$this->db->where('quid',$quid);
+<<<<<<< HEAD
 	$this->db->update('quiz',$userdata);
+=======
+	$this->db->update('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 }
 
@@ -280,7 +355,11 @@ $kk=$k+1;
 function get_qcl($quid){
 	
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $query=$this->db->get('qcl');
+=======
+	 $query=$this->db->get('savsoft_qcl');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 return $query->result_array();
 	
 }
@@ -288,7 +367,11 @@ function get_qcl($quid){
  function remove_qid($quid,$qid){
 	 
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $query=$this->db->get('quiz');
+=======
+	 $query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $quiz=$query->row_array();
 	 $new_qid=array();
 	 foreach(explode(',',$quiz['qids']) as $key => $oqid){
@@ -306,14 +389,22 @@ function get_qcl($quid){
 	 
 	 );
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $this->db->update('quiz',$userdata);
+=======
+	 $this->db->update('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 return true;
  }
  
   function add_qid($quid,$qid){
 	 
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $query=$this->db->get('quiz');
+=======
+	 $query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $quiz=$query->row_array();
 	 $new_qid=array();
 	 $new_qid[]=$qid;
@@ -333,7 +424,11 @@ function get_qcl($quid){
 	 
 	 );
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $this->db->update('quiz',$userdata);
+=======
+	 $this->db->update('savsoft_quiz',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 return true;
  }
  
@@ -341,7 +436,11 @@ function get_qcl($quid){
  
  function get_quiz($quid){
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $query=$this->db->get('quiz');
+=======
+	 $query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 return $query->row_array();
 	 
 	 
@@ -350,7 +449,11 @@ function get_qcl($quid){
  function remove_quiz($quid){
 	 
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 if($this->db->delete('quiz')){
+=======
+	 if($this->db->delete('savsoft_quiz')){
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		 
 		 return true;
 	 }else{
@@ -367,7 +470,11 @@ function get_qcl($quid){
 	 
 	 $this->db->where('quid',$quid);
 	 $this->db->where('uid',$uid);
+<<<<<<< HEAD
 	$query=$this->db->get('result');
+=======
+	$query=$this->db->get('savsoft_result');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	return $query->num_rows();
 	 
  }
@@ -377,7 +484,11 @@ function get_qcl($quid){
 	 
 	 // get quiz info
 	  $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $query=$this->db->get('quiz');
+=======
+	 $query=$this->db->get('savsoft_quiz');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$quiz=$query->row_array();
 	 
 	 if($quiz['question_selection']=='0'){
@@ -391,7 +502,11 @@ $noq=$quiz['noq'];
 	$i=0;
 	$wqids=implode(',',$qids);
 	$noq=array();
+<<<<<<< HEAD
 	$query=$this->db->query("select * from qbank join category on category.cid=qbank.cid where qid in ($wqids) ORDER BY FIELD(qid,$wqids)  ");	
+=======
+	$query=$this->db->query("select * from savsoft_qbank join savsoft_category on savsoft_category.cid=savsoft_qbank.cid where qid in ($wqids) ORDER BY FIELD(qid,$wqids)  ");	
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$questions=$query->result_array();
 	foreach($questions as $qk => $question){
 	if(!in_array($question['category_name'],$categories)){
@@ -423,7 +538,11 @@ $noq=$quiz['noq'];
 	}else{
 	// randomaly select qids
 	 $this->db->where('quid',$quid);
+<<<<<<< HEAD
 	 $query=$this->db->get('qcl');
+=======
+	 $query=$this->db->get('savsoft_qcl');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $qcl=$query->result_array();
 	$qids=array();
 	$categories=array();
@@ -435,7 +554,11 @@ $noq=$quiz['noq'];
 		$noq=$val['noq'];
 		
 		$i=0;
+<<<<<<< HEAD
 	$query=$this->db->query("select * from qbank join category on category.cid=qbank.cid where qbank.cid='$cid' and lid='$lid' ORDER BY RAND() limit $noq ");	
+=======
+	$query=$this->db->query("select * from savsoft_qbank join savsoft_category on savsoft_category.cid=savsoft_qbank.cid where savsoft_qbank.cid='$cid' and lid='$lid' ORDER BY RAND() limit $noq ");	
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$questions=$query->result_array();
 	foreach($questions as $qk => $question){
 		$qids[]=$question['qid'];
@@ -469,7 +592,11 @@ $noq=$quiz['noq'];
 		 $photoname=$this->session->userdata('photoname');
 		 $userdata['photo']=$photoname;
 	 }
+<<<<<<< HEAD
 	 $this->db->insert('result',$userdata);
+=======
+	 $this->db->insert('savsoft_result',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	  $rid=$this->db->insert_id();
 	return $rid;
  }
@@ -478,7 +605,11 @@ $noq=$quiz['noq'];
  
  function open_result($quid,$uid){
 	 $result_open=$this->lang->line('open');
+<<<<<<< HEAD
 		$query=$this->db->query("select * from result  where result.result_status='$result_open'  and result.uid='$uid'  "); 
+=======
+		$query=$this->db->query("select * from savsoft_result  where savsoft_result.result_status='$result_open'  and savsoft_result.uid='$uid'  "); 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	if($query->num_rows() >= '1'){
 		$result=$query->row_array();
 return $result['rid'];		
@@ -492,7 +623,11 @@ return $result['rid'];
  function quiz_result($rid){
 	 
 	 
+<<<<<<< HEAD
 	$query=$this->db->query("select * from result join quiz on result.quid=quiz.quid where result.rid='$rid' "); 
+=======
+	$query=$this->db->query("select * from savsoft_result join savsoft_quiz on savsoft_result.quid=savsoft_quiz.quid where savsoft_result.rid='$rid' "); 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	return $query->row_array(); 
 	 
  }
@@ -500,7 +635,11 @@ return $result['rid'];
 function saved_answers($rid){
 	 
 	 
+<<<<<<< HEAD
 	$query=$this->db->query("select * from answers  where answers.rid='$rid' "); 
+=======
+	$query=$this->db->query("select * from savsoft_answers  where savsoft_answers.rid='$rid' "); 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	return $query->result_array(); 
 	 
  }
@@ -508,7 +647,11 @@ function saved_answers($rid){
  
  function assign_score($rid,$qno,$score){
 	 $qp_score=$score;
+<<<<<<< HEAD
 	 $query=$this->db->query("select * from result join quiz on result.quid=quiz.quid where result.rid='$rid' "); 
+=======
+	 $query=$this->db->query("select * from savsoft_result join savsoft_quiz on savsoft_result.quid=savsoft_quiz.quid where savsoft_result.rid='$rid' "); 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$quiz=$query->row_array(); 
 	$score_ind=explode(',',$quiz['score_individual']);
 	$score_ind[$qno]=$score;
@@ -551,7 +694,11 @@ function saved_answers($rid){
 		$userdata['result_status']=$qr;
 	}
 	 $this->db->where('rid',$rid);
+<<<<<<< HEAD
 	 $this->db->update('result',$userdata);
+=======
+	 $this->db->update('savsoft_result',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 
 	 // question performance
 	 $qp=$r_qids[$qno];
@@ -561,7 +708,11 @@ function saved_answers($rid){
 		 }else if($$qp_score=='2'){
 			$crin=", no_time_incorrected=(no_time_incorrected +1)"; 	 
 		 }
+<<<<<<< HEAD
 		  $query_qp="update qbank set  $crin  where qid='$qp'  ";
+=======
+		  $query_qp="update savsoft_qbank set  $crin  where qid='$qp'  ";
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $this->db->query($query_qp);
  }
  
@@ -575,7 +726,11 @@ function saved_answers($rid){
 	 }
 	 $email=$logged_in['email'];
 	 $rid=$this->session->userdata('rid');
+<<<<<<< HEAD
 	$query=$this->db->query("select * from result join quiz on result.quid=quiz.quid where result.rid='$rid' "); 
+=======
+	$query=$this->db->query("select * from savsoft_result join savsoft_quiz on savsoft_result.quid=savsoft_quiz.quid where savsoft_result.rid='$rid' "); 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$quiz=$query->row_array(); 
 	$score_ind=explode(',',$quiz['score_individual']);
 	$r_qids=explode(',',$quiz['r_qids']);
@@ -623,7 +778,11 @@ function saved_answers($rid){
 		$userdata['result_status']=$qr;
 	}
 	 $this->db->where('rid',$rid);
+<<<<<<< HEAD
 	 $this->db->update('result',$userdata);
+=======
+	 $this->db->update('savsoft_result',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 
 	 
 	 foreach($qids_perf as $qp => $qpval){
@@ -635,14 +794,22 @@ function saved_answers($rid){
 		 }else if($qpval=='2'){
 			$crin=", no_time_incorrected=(no_time_incorrected +1)"; 	 
 		 }
+<<<<<<< HEAD
 		  $query_qp="update qbank set no_time_served=(no_time_served +1)  $crin  where qid='$qp'  ";
+=======
+		  $query_qp="update savsoft_qbank set no_time_served=(no_time_served +1)  $crin  where qid='$qp'  ";
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 $this->db->query($query_qp);
 		 
 	 }
 	 
 if($this->config->item('allow_result_email')){
 	$this->load->library('email');
+<<<<<<< HEAD
 	$query = $this -> db -> query("select result.*,users.*,quiz.* from result, users, quiz where users.uid=result.uid and quiz.quid=result.quid and result.rid='$rid'");
+=======
+	$query = $this -> db -> query("select savsoft_result.*,savsoft_users.*,savsoft_quiz.* from savsoft_result, savsoft_users, savsoft_quiz where savsoft_users.uid=savsoft_result.uid and savsoft_quiz.quid=savsoft_result.quid and savsoft_result.rid='$rid'");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$qrr=$query->row_array();
   		if($this->config->item('protocol')=="smtp"){
 			$config['protocol'] = 'smtp';
@@ -713,7 +880,11 @@ if($this->config->item('allow_result_email')){
 
 	return "Something wrong";
 	}
+<<<<<<< HEAD
 	$query=$this->db->query("select * from result join quiz on result.quid=quiz.quid where result.rid='$rid' "); 
+=======
+	$query=$this->db->query("select * from savsoft_result join savsoft_quiz on savsoft_result.quid=savsoft_quiz.quid where savsoft_result.rid='$rid' "); 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	$quiz=$query->row_array(); 
 	$correct_score=$quiz['correct_score'];
 	$incorrect_score=$quiz['incorrect_score'];
@@ -724,7 +895,11 @@ if($this->config->item('allow_result_email')){
 	
 	// remove existing answers
 	$this->db->where('rid',$rid);
+<<<<<<< HEAD
 	$this->db->delete('answers');
+=======
+	$this->db->delete('savsoft_answers');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	
 	 foreach($_POST['answer'] as $ak => $answer){
 		 
@@ -732,7 +907,11 @@ if($this->config->item('allow_result_email')){
 		 if($_POST['question_type'][$ak] == '1' || $_POST['question_type'][$ak] == '2'){
 			 
 			 $qid=$qids[$ak];
+<<<<<<< HEAD
 			 $query=$this->db->query(" select * from options where qid='$qid' ");
+=======
+			 $query=$this->db->query(" select * from savsoft_options where qid='$qid' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			 $options_data=$query->result_array();
 			 $options=array();
 			 foreach($options_data as $ok => $option){
@@ -753,7 +932,11 @@ if($this->config->item('allow_result_email')){
 					'q_option'=>$ansval,
 					'score_u'=>$options[$ansval]
 					);
+<<<<<<< HEAD
 					$this->db->insert('answers',$userdata);
+=======
+					$this->db->insert('savsoft_answers',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 				$attempted=1;	
 				}
 				if($attempted==1){
@@ -770,7 +953,11 @@ if($this->config->item('allow_result_email')){
 		 if($_POST['question_type'][$ak] == '3'){
 			 
 			 $qid=$qids[$ak];
+<<<<<<< HEAD
 			 $query=$this->db->query(" select * from options where qid='$qid' ");
+=======
+			 $query=$this->db->query(" select * from savsoft_options where qid='$qid' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			 $options_data=$query->row_array();
 			 $options_data=explode(',',$options_data['q_option']);
 			 $noptions=array();
@@ -797,7 +984,11 @@ if($this->config->item('allow_result_email')){
 					'q_option'=>$ansval,
 					'score_u'=>$marks
 					);
+<<<<<<< HEAD
 					$this->db->insert('answers',$userdata);
+=======
+					$this->db->insert('savsoft_answers',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 				}
 				}
@@ -826,7 +1017,11 @@ if($this->config->item('allow_result_email')){
 					'q_option'=>$ansval,
 					'score_u'=>0
 					);
+<<<<<<< HEAD
 					$this->db->insert('answers',$userdata);
+=======
+					$this->db->insert('savsoft_answers',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					$attempted=1;
 					}
 					}
@@ -842,7 +1037,11 @@ if($this->config->item('allow_result_email')){
 		 // match
 			 if($_POST['question_type'][$ak] == '5'){
 				 			 $qid=$qids[$ak];
+<<<<<<< HEAD
 			 $query=$this->db->query(" select * from options where qid='$qid' ");
+=======
+			 $query=$this->db->query(" select * from savsoft_options where qid='$qid' ");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			 $options_data=$query->result_array();
 			$noptions=array();
 			foreach($options_data as $op => $option){
@@ -867,7 +1066,11 @@ if($this->config->item('allow_result_email')){
 					'q_option'=>$ansval,
 					'score_u'=>$mc
 					);
+<<<<<<< HEAD
 					$this->db->insert('answers',$userdata);
+=======
+					$this->db->insert('savsoft_answers',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					$attempted=1;
 					}
 					}
@@ -897,7 +1100,11 @@ if($this->config->item('allow_result_email')){
 	 
 	 );
 	 $this->db->where('rid',$rid);
+<<<<<<< HEAD
 	 $this->db->update('result',$userdata);
+=======
+	 $this->db->update('savsoft_result',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 
 	 return true;
 	 
@@ -913,7 +1120,11 @@ if($this->config->item('allow_result_email')){
 	 
 	 );
 	 $this->db->where('rid',$rid);
+<<<<<<< HEAD
 	 $this->db->update('result',$userdata);
+=======
+	 $this->db->update('savsoft_result',$userdata);
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 	 
 	 return true;
  }

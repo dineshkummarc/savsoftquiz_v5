@@ -44,7 +44,11 @@
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('maximum_attempts');?></label> 
+<<<<<<< HEAD
 					<input type="text" name="maximum_attempts"  value="1" class="form-control" placeholder="<?php echo $this->lang->line('maximum_attempts');?>"   required >
+=======
+					<input type="text" name="maximum_attempts"  value="10" class="form-control" placeholder="<?php echo $this->lang->line('maximum_attempts');?>"   required >
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('pass_percentage');?></label> 
@@ -64,8 +68,13 @@
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail" ><?php echo $this->lang->line('view_answer');?></label> <br>
+<<<<<<< HEAD
 					<input type="radio" name="view_answer"    value="1"  > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
 					<input type="radio" name="view_answer"    value="0" checked > <?php echo $this->lang->line('no');?>
+=======
+					<input type="radio" name="view_answer"    value="1" checked > <?php echo $this->lang->line('yes');?>&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="view_answer"    value="0"  > <?php echo $this->lang->line('no');?>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			</div>
 				<div class="form-group">	 
 					<label for="inputEmail" ><?php echo $this->lang->line('open_quiz');?></label> <br>
@@ -103,7 +112,11 @@
 					<label   ><?php echo $this->lang->line('quiz_template');?></label> <br>
 					<select name="quiz_template">
 					<option value="Default">Default</option>
+<<<<<<< HEAD
 					<!-- <option value="Advance">Advance</option> -->
+=======
+					<option value="Advance">Advance</option>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 					
 					</select>
 </div>

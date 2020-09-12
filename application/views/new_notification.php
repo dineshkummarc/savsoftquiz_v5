@@ -59,7 +59,11 @@
 			<br><br>
 			<?php 
 			}else{
+<<<<<<< HEAD
 			$nq=$this->db->query("select * from users where uid='$tuid'");
+=======
+			$nq=$this->db->query("select * from savsoft_users where uid='$tuid'");
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			$nuser=$nq->row_array();
 			
 			?>

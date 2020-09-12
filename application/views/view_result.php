@@ -315,9 +315,14 @@ if($result['gen_certificate']=='1'){
 	
 		 
 		 <center>
+<<<<<<< HEAD
 		 <?php echo $this->lang->line('result_id');?>: <?php echo $result['rid'];?> &nbsp;&nbsp;&nbsp;
 		<?php echo $this->lang->line('user_id');?>: <?php echo $result['uid'];?>&nbsp;&nbsp;&nbsp;
 		<?php echo $this->lang->line('student_code');?>: <?php echo $result['student_code'];?>&nbsp;&nbsp;&nbsp;
+=======
+		 <?php echo $this->lang->line('result_id');?> <?php echo $result['rid'];?> &nbsp;&nbsp;&nbsp;
+		<?php echo $this->lang->line('user_id');?> <?php echo $result['uid'];?>&nbsp;&nbsp;&nbsp;
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 		<?php echo $this->lang->line('email');?>: <?php echo $result['email'];?>
 		 </center>
 		
@@ -362,7 +367,10 @@ if($result['camera_req']=='1'){
 	<?php 
 }
 ?>
+<<<<<<< HEAD
 <tr><td><?php echo $this->lang->line('student_code');?></td><td><?php echo $result['student_code'];?></td></tr>
+=======
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 <tr><td><?php echo $this->lang->line('first_name');?></td><td><?php echo $result['first_name'];?></td></tr>
 <tr><td><?php echo $this->lang->line('last_name');?></td><td><?php echo $result['last_name'];?></td></tr>
 <tr><td><?php echo $this->lang->line('email');?></td><td><?php echo $result['email'];?></td></tr>

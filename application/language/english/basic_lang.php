@@ -1,7 +1,13 @@
 <?php 
+<<<<<<< HEAD
 $lang['savsoft_quiz'] = "Quiz Exam Online";
 $lang['installation_process'] = "Installation Process";
 $lang['installation_completed'] = "Installation Completed. Visit base URL {base_url} to login.<br><br>Default login info:<br> Email: admin@example.com <br>Password: admin<br><br>For more information";
+=======
+$lang['savsoft_quiz'] = "Savsoft Quiz v4.0";
+$lang['installation_process'] = "Installation Process";
+$lang['installation_completed'] = "Installation Completed. Visit base URL {base_url} to login.<br><br>Default login info:<br> Email: admin@example.com <br>Password: admin<br><br>For more information or customization visit <a href='http://savsoftquiz.com/'>www.SavsoftQuiz.com/</a> ";
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 $lang['installation_failed'] = "Installation Failed";
 $lang['hostname'] = "Database Host Name";
 $lang['db_name'] = "Database Name";
@@ -15,9 +21,13 @@ $lang['login'] = "Login";
 $lang['processing'] = "Processing...";
 $lang['install_now'] = "Install Now";
 $lang['email_address'] = "Email Address";
+<<<<<<< HEAD
 $lang['student_code'] = "Student Code";
 $lang['password'] = "Password";
 $lang['user_id'] = "User ID";
+=======
+$lang['password'] = "Password";
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 $lang['invalid_login'] = "Email or password invalid.";
 $lang['resend_link'] = "Resend verification link.";
 $lang['invalid_email'] = "Email id not registered";

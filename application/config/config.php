@@ -7,7 +7,11 @@ include('sq_config.php');
 |--------------------------------------------------------------------------
 | 
 */
+<<<<<<< HEAD
 $config['base_url'] = $sq_base_url;
+=======
+$config['base_url'] = 'http://practee-220805.appspot.com/';
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 
 
 // enable webcam js ( true or false )
@@ -553,10 +557,17 @@ $config['encryption_key'] = 'savsoftquiz';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
+<<<<<<< HEAD
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
+=======
+$config['sess_driver'] = 'database';
+$config['sess_cookie_name'] = 'ci_session';
+$config['sess_expiration'] = 7200;
+$config['sess_save_path'] = 'ci_sessions';
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;

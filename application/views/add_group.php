@@ -45,7 +45,12 @@
 			</div>
 			 
 			<div class="form-group">	 
+<<<<<<< HEAD
 					<input type="hidden" required  name="price"  class="form-control"  value="0" > 
+=======
+					<label for="inputEmail"  ><?php echo $this->lang->line('price');?></label> 
+					<input type="text" required  name="price"  class="form-control"  value="0" > 
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			</div>
 			<div class="form-group">	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('valid_for_days');?></label> 

@@ -156,7 +156,11 @@ class Login extends CI_Controller {
 		
 		 
 		$this->load->library('form_validation');
+<<<<<<< HEAD
 		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+=======
+		$this->form_validation->set_rules('email', 'Email', 'required|is_unique[savsoft_users.email]');
+>>>>>>> savsoftquiz_v4.0_advance-master/master
         $this->form_validation->set_rules('password', 'Password', 'required');
           if ($this->form_validation->run() == FALSE)
                 {

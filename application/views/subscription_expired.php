@@ -11,9 +11,16 @@
  <h3><?php echo $this->lang->line('subscription_expired_message');?></h3>
    
  <br>
+<<<<<<< HEAD
 
  
  <br>
+=======
+ <a href="<?php echo site_url('payment_gateway_2/subscribe/'.$user['gid'].'/'.$user['uid']);?>"><?php echo $this->lang->line('click_here');?></a> 
+ <?php echo $this->lang->line('to_buy');?>
+ 
+ <br><br>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
  
   <a href="<?php echo site_url('login');?>"><?php echo $this->lang->line('back');?></a> 
  

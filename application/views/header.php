@@ -54,7 +54,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
+<<<<<<< HEAD
             <a class="navbar-brand" href="#"><?php echo $this->lang->line('savsoft_quiz');?></a>
+=======
+            <a class="navbar-brand" href="http://savsoftquiz.com"><?php echo $this->lang->line('savsoft_quiz');?></a>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -109,6 +113,11 @@
 	
 
 	           <li><a href="<?php echo site_url('result');?>"><?php echo $this->lang->line('result');?></a></li>
+<<<<<<< HEAD
+=======
+			 
+			 <li><a href="<?php echo site_url('liveclass');?>"><?php echo $this->lang->line('live_classroom');?></a></li>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			<?php  
 				if($logged_in['su']==0){
 			?> <li><a href="<?php echo site_url('notification');?>"><?php echo $this->lang->line('notification');?></a></li>
@@ -117,6 +126,10 @@
 			  } 
 				if($logged_in['su']==1){
 			?>
+<<<<<<< HEAD
+=======
+			 <li><a href="<?php echo site_url('payment_gateway');?>"><?php echo $this->lang->line('payment_history');?></a></li>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 			 
 			  <li class="dropdown" <?php if($this->uri->segment(1)=='user_group'){ echo "class='active'"; } ?> >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->lang->line('setting');?>  <span class="caret"></span></a>
@@ -126,9 +139,15 @@
                   <li><a href="<?php echo site_url('qbank/category_list');?>"><?php echo $this->lang->line('category_list');?></a></li>
                   <li><a href="<?php echo site_url('qbank/level_list');?>"><?php echo $this->lang->line('level_list');?></a></li>
                   
+<<<<<<< HEAD
 					<!-- <li><a href="<?php echo site_url('dashboard/config');?>"><?php echo $this->lang->line('config');?></a></li>
 					 
 					<li><a href="<?php echo site_url('dashboard/css');?>"><?php echo $this->lang->line('custom_css');?></a></li> -->
+=======
+					<li><a href="<?php echo site_url('dashboard/config');?>"><?php echo $this->lang->line('config');?></a></li>
+					 
+					<li><a href="<?php echo site_url('dashboard/css');?>"><?php echo $this->lang->line('custom_css');?></a></li>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 						  
                   
                 </ul>

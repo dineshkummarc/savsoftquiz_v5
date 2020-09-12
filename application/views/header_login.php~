@@ -49,7 +49,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
+<<<<<<< HEAD
             <a class="navbar-brand" href="http://savsoftquiz.com"><?php echo $this->lang->line('quiz');?></a>
+=======
+            <a class="navbar-brand" href="http://savsoftquiz.com"><?php echo $this->lang->line('savsoft_quiz');?></a>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">

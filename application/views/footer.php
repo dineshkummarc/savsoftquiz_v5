@@ -1,5 +1,9 @@
 <div class="container" style="text-align:right;">
+<<<<<<< HEAD
 
+=======
+Powered by <a href="https://savsoftquiz.com">Savsoft Quiz</a>
+>>>>>>> savsoftquiz_v4.0_advance-master/master
 </div>
 
 
