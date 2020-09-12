@@ -1,3 +1,0 @@
-<?php 
-exit('Access denied!');
-?>
