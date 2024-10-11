@@ -2,9 +2,9 @@ LATEST VERSION V6.0 has been released at https://github.com/Techkshetra/savsoftq
 This repo will be archived soon
 
 Savsoft Quiz v5.0 is an Opern Source and Free php based web application (script) to create and manage online quiz, test, exam on your website.<br>
-<br> 
+<br>
 
-<h2><a href="https://github.com/savsofts/savsoftquiz_v5/archive/master.zip">Download</a></h2>
+<h2><a href="https://github.com/dineshkummarc/savsoftquiz_v5/archive/master.zip">Download</a></h2>
 
 <br><br>
 <strong>Main features:</strong><br>
@@ -25,7 +25,6 @@ Quiz screen is user-friendly layout with color codes of attempted, unattempted, 
 Detailed report with score obtained, percentage, percentile, categorywise report and google chart. Admin can allow users to view correct answers.
 <br>
 <br><br>
-  
 
 <strong>Enterprise version</strong><br> 
 Website: <a href="https://savsoftquiz.com">https://savsoftquiz.com</a> <br> 
@@ -45,7 +44,6 @@ Required any customisation or support service?<br><br>
 
 <strong>Contact us:</strong><br>
 Contact form: <a href="https://savsoftquiz.com/web/contact.php">https://savsoftquiz.com/web/contact.php</a><br>
- 
 
 <strong>The MIT License</stron><br> 
 
@@ -56,4 +54,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 <br>
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-<br><br><br>
+<br><br>
