@@ -8,29 +8,23 @@ Savsoft Quiz v5.0 is an Opern Source and Free php based web application (script)
 
 <strong>Admin</strong></br>
 ``
-admin@example.com
-admin
+admin@example.com / admin
 ``
-
 
 <strong>Sub Admin</strong></br>
 ``
-subadmin@example.com
-admin
+subadmin@example.com / admin
 ``
 
 <strong>Users</strong></br>
 ``
-user@example.com
-123456
+user@example.com / 123456
 ``
 ``
-user2@example.com
-123456
+user2@example.com / 123456
 ``
 ``
-user@example222.com
-123456
+user@example222.com / 123456
 ``
 
 <strong>Main features:</strong><br>
