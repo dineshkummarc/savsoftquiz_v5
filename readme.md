@@ -4,6 +4,31 @@ Savsoft Quiz v5.0 is an Opern Source and Free php based web application (script)
 
 <h2><a href="https://github.com/dineshkummarc/savsoftquiz_v5/archive/master.zip">Download</a></h2>
 
+<strong>User Credentials:</strong>
+``
+<strong>Admin</strong>
+admin@example.com
+admin
+``
+
+``
+<strong>Sub Admin</strong>
+subadmin@example.com
+admin
+``
+
+``
+<strong>Users</strong>
+user@example.com
+123456
+
+user2@example.com
+123456
+
+user@example222.com
+123456
+``
+
 <strong>Main features:</strong><br>
 User Management: <br>
 Create unlimited users and manage under group <br>
